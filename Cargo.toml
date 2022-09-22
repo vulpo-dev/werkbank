@@ -1,0 +1,40 @@
+[package]
+name = "werkbank"
+version = "0.1.0"
+edition = "2021"
+description="A set of commnon configuration for vulpo services"
+homepage="https://github.com/vulpo-dev/werkbank"
+license = "MPL-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = { version = "0.4.17", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+figment = { version = "0.10.3", features= ["env"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+tracing-opentelemetry = "0.17.3"
+opentelemetry = { version = "0.17", features = ["rt-tokio"] }
+opentelemetry-otlp = "0.10"
+uuid = { version = "1.0", features = ["serde", "v4"] }
+clap = "4.0.0-rc.2"
+url = "2.3.1"
+
+[dependencies.rocket]
+version = "0.5.0-rc.2"
+features = ["uuid", "json"]
+
+[dependencies.sqlx]
+version = "0.6"
+default-features = false
+features = [
+	"runtime-tokio-rustls",
+	"macros",
+	"postgres",
+	"uuid",
+	"chrono",
+	"json",
+	"migrate",
+	"offline",
+]
