@@ -20,10 +20,13 @@ opentelemetry-otlp = "0.10"
 uuid = { version = "1.0", features = ["serde", "v4"] }
 clap = "4.0.0-rc.2"
 url = "2.3.1"
-
-[dependencies.rocket]
-version = "0.5.0-rc.2"
-features = ["uuid", "json"]
+async-trait = "0.1.57"
+redis = { version = "0.21.5", features = ["r2d2", "tokio-comp"] }
+lru = "0.8.0"
+rocket = { version = "0.5.0-rc.2", features = ["uuid", "json"] }
+futures = "0.3"
+retainer = "0.3.0"
+tokio = "1"
 
 [dependencies.sqlx]
 version = "0.6"
