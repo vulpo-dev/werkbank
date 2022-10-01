@@ -1,6 +1,6 @@
 [package]
 name = "werkbank"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description="A set of commnon configuration for vulpo services"
 homepage="https://github.com/vulpo-dev/werkbank"
